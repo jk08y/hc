@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="45" fill="#1DA1F2"/>
+  
+  <!-- The H is formed by negative space inside a triangle (all-seeing eye pyramid) -->
+  <!-- Main triangle (pyramid shape) -->
+  <path d="M 50 15 L 85 75 L 15 75 Z" fill="#FFFFFF"/>
+  
+  <!-- Cut out the H shape from the triangle -->
+  <!-- Left vertical cut -->
+  <rect x="35" y="30" width="8" height="35" fill="#1DA1F2"/>
+  
+  <!-- Right vertical cut -->
+  <rect x="57" y="30" width="8" height="35" fill="#1DA1F2"/>
+  
+  <!-- Horizontal crossbar cut -->
+  <rect x="35" y="45" width="30" height="6" fill="#1DA1F2"/>
+  
+  <!-- The all-seeing eye at the top of the triangle -->
+  <circle cx="50" cy="35" r="8" fill="#1DA1F2" stroke="#FFFFFF" stroke-width="1"/>
+  <circle cx="50" cy="35" r="3" fill="#FFFFFF"/>
+  <circle cx="50" cy="35" r="1.5" fill="#1DA1F2"/>
+  
+  <!-- Subtle rays emanating from the eye -->
+  <g stroke="#FFFFFF" stroke-width="0.5" opacity="0.3">
+    <line x1="50" y1="25" x2="50" y2="20"/>
+    <line x1="42" y1="28" x2="38" y2="24"/>
+    <line x1="58" y1="28" x2="62" y2="24"/>
+    <line x1="40" y1="35" x2="35" y2="35"/>
+    <line x1="60" y1="35" x2="65" y2="35"/>
+  </g>
+</svg>

@@ -1,0 +1,6 @@
+# Allow all web crawlers to access all content
+User-agent: *
+Allow: /
+
+# Add the full URL to your sitemap here once you have one
+# Sitemap: https://heychat.pro/sitemap.xml

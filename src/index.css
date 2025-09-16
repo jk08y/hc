@@ -1,0 +1,158 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles */
+:root {
+  --color-primary: #1DA1F2;
+  --color-secondary: #657786;
+  --color-dark: #15202B;
+  --color-light: #FFFFFF;
+  --color-border-light: #EFF3F4;
+  --color-border-dark: #38444d;
+}
+
+/* FIX: Apply theme background and text colors directly to the body */
+body {
+  @apply font-sans antialiased bg-white dark:bg-dark text-gray-900 dark:text-white;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: contain;
+}
+
+/* Fix 100vh issue on mobile */
+html, body, #root {
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Prevent iOS zoom on input focus */
+@media (max-width: 767px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-secondary/40 rounded-full;
+}
+
+/* Mobile optimized touch scrolling */
+.scrollable {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Custom components */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-full py-2 px-4 font-semibold transition-colors;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-dark;
+  }
+  
+  .btn-outline {
+    @apply border border-primary text-primary hover:bg-primary/10;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-white hover:bg-secondary/90;
+  }
+  
+  .input {
+    @apply w-full rounded-md border p-2 focus:outline-none focus:ring-2 focus:ring-primary;
+  }
+  
+  .card {
+    @apply rounded-lg p-4 shadow-sm;
+  }
+  
+  /* Light mode card */
+  @media (prefers-color-scheme: light) {
+    .card {
+      @apply bg-white border border-light-border;
+    }
+  }
+  
+  /* Dark mode card */
+  @media (prefers-color-scheme: dark) {
+    .card {
+      @apply bg-dark-light border border-dark-border;
+    }
+  }
+  
+  /* Mobile-friendly tap targets */
+  .tap-target {
+    @apply min-h-[44px] min-w-[44px] flex items-center justify-center;
+  }
+  
+  /* Safe area padding for notched devices */
+  .safe-area-padding {
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-top: env(safe-area-inset-top);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+  
+  /* Responsive text sizing */
+  .text-responsive {
+    @apply text-sm sm:text-base;
+  }
+  
+  /* Better mobile buttons */
+  .mobile-btn {
+    @apply touch-manipulation select-none active:opacity-70;
+  }
+}
+
+/* Better form controls for mobile */
+input, textarea, select, button {
+  @apply touch-manipulation;
+}
+
+/* Fix for iOS Safari extra padding */
+button, [type='button'], [type='reset'], [type='submit'] {
+  -webkit-appearance: none;
+}
+
+/* Smooth appearance animations */
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive media handling */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Improve accessibility  */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

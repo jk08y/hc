@@ -1,0 +1,70 @@
+/* src/assets/styles/tailwind.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+@layer base {
+  body {
+    @apply font-sans antialiased;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-full py-2 px-4 font-medium transition-colors;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-dark;
+  }
+  
+  .btn-outline {
+    @apply border border-primary text-primary hover:bg-primary/10;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-white hover:bg-secondary/90;
+  }
+  
+  .input {
+    @apply w-full rounded-md border p-2 focus:outline-none focus:ring-2 focus:ring-primary;
+  }
+  
+  .card {
+    @apply rounded-lg p-4 shadow-sm;
+  }
+}
+
+/* Twitter/X specific styles */
+.tweet-hover {
+  @apply hover:bg-gray-50 dark:hover:bg-dark-light transition-colors;
+}
+
+.tweet-border {
+  @apply border-b border-gray-200 dark:border-dark-border;
+}
+
+/* Media queries for breakpoints */
+@media (min-width: 640px) {
+  /* Small screens and up */
+}
+
+@media (min-width: 768px) {
+  /* Medium screens and up */
+}
+
+@media (min-width: 1024px) {
+  /* Large screens and up */
+}
+
+@media (min-width: 1280px) {
+  /* Extra large screens */
+}
+
+/* Dark mode specific styles */
+@media (prefers-color-scheme: dark) {
+  body {
+    @apply bg-dark text-white;
+  }
+}

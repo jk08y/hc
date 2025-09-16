@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- PWA & SEO Enhancements -->
+    <meta name="description" content="HeyChat - Share what's happening in your world and connect with people." />
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="canonical" href="https://heychat.pro" />
+    
+    <!-- FIX: Updated theme-color for a better PWA experience -->
+    <meta name="theme-color" content="#15202B" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#1DA1F2" media="(prefers-color-scheme: light)" />
+
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://heychat.pro/" />
+    <meta property="og:title" content="HeyChat - What's Happening?" />
+    <meta property="og:description" content="Join the conversation. HeyChat is your go-to social network for real-time updates and what's trending." />
+    <meta property="og:image" content="https://heychat.pro/og-image.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://heychat.pro/" />
+    <meta property="twitter:title" content="HeyChat - What's Happening?" />
+    <meta property="twitter:description" content="Join the conversation. HeyChat is your go-to social network for real-time updates and what's trending." />
+    <meta property="twitter:image" content="https://heychat.pro/og-image.png" />
+
+    <title>HeyChat</title>
+    <style>
+      /* Preloader styles */
+      .preloader {
+        position: fixed;
+        inset: 0;
+        background-color: #15202B; /* Dark background */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease-out;
+      }
+      .preloader.fade-out {
+        opacity: 0;
+      }
+      .preloader-logo {
+        width: 60px;
+        height: 60px;
+        animation: pulse 1.5s infinite ease-in-out;
+      }
+      @keyframes pulse {
+        0%, 100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+      <img src="/logo.svg" alt="HeyChat Logo" class="preloader-logo" />
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
